@@ -27,7 +27,7 @@ class Zadanie extends StatelessWidget {
           SlidableAction(onPressed: (_) {
             usuwanie();
           },
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(5),
           backgroundColor: Colors.red,
           icon: Icons.delete,
           label: "Usuń",
@@ -45,15 +45,24 @@ class Zadanie extends StatelessWidget {
           
           child: Row(
             children: [
-              Checkbox(
-                value: wartosc, 
-                onChanged: onChanged,
+              Padding(
+                padding: const EdgeInsets.only(left: 6.0),
+                child: Checkbox(
+                  value: wartosc, 
+                  onChanged: onChanged,
+                ),
               ),
       
-              Expanded(
-                child: Text(
-                  text,
-                  ),
+              Padding(
+                padding: const EdgeInsets.only(left: 4.0),
+                child: Expanded(
+                  child: Text(
+                    text,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                    ),
+                ),
               ),
             ],
           ),
